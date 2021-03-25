@@ -1,3 +1,4 @@
+using DotNetGraphQL.API.Schemas;
 using GraphQL.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +16,15 @@ namespace DotNetGraphQL.API
         {
             services.Configure<KestrelServerOptions>(options => options.AllowSynchronousIO = true);
 
+            services.AddSingleton<DogImagesGraphType>();
+            services.AddSingleton<StarWarsData>();
+            services.AddSingleton<HumanType>();
+            services.AddSingleton<HumanInputType>();
+            services.AddSingleton<DroidType>();
+            services.AddSingleton<CharacterInterface>();
+            services.AddSingleton<EpisodeEnum>();
+            services.AddSingleton<ImagesQuery>();
+            services.AddSingleton<StarWarsMutation>();
             services.AddSingleton<ImagesSchema>();
             
             services.AddGraphQL(options => options.EnableMetrics = false)

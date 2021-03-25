@@ -7,8 +7,9 @@ using GraphQL.Types;
 
 namespace DotNetGraphQL.API
 {
-    public class ImagesQuery : ObjectGraphType
+    public class ImagesQuery : ObjectGraphType<object>
     {
+        
         public ImagesQuery()
         {
             Name = "Query";
@@ -24,12 +25,19 @@ namespace DotNetGraphQL.API
                     context => GetDogImagesByNameOrBreed(context.GetArgument<string>("coatColor"), context.GetArgument<string>("breed")));
         }
 
-        static IEnumerable<DogImagesModel> GetDogImagesByNameOrBreed(string? coatColor, string? breed) => (string.IsNullOrWhiteSpace(coatColor), string.IsNullOrWhiteSpace(breed)) switch
-        {
-            (true, true) => DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase) && x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
-            (true, false) => DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase)),
-            (false, true) => DogImagesData.DogImages.Where(x => x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
-            (false, false) => throw new ArgumentException($"{nameof(DogImagesModel.CoatColor)} and {nameof(DogImagesModel.Breed)} cannot both be null")
-        };
+        static IEnumerable<DogImagesModel> GetDogImagesByNameOrBreed(string? coatColor, string? breed) 
+            => 
+            (string.IsNullOrWhiteSpace(coatColor), string.IsNullOrWhiteSpace(breed)) 
+            switch
+            {
+                (true, true) => 
+                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase) && x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
+                (true, false) => 
+                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase)),
+                (false, true) => 
+                    DogImagesData.DogImages.Where(x => x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
+                (false, false) => 
+                    throw new ArgumentException($"{nameof(DogImagesModel.CoatColor)} and {nameof(DogImagesModel.Breed)} cannot both be null")
+            };
     }
 }
