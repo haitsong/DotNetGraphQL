@@ -17,5 +17,12 @@
         DISTINCTCOUNT
     }
 
-
+    public enum QuantityComparator
+    {
+        EQ,
+        LT,
+        LE,
+        GT,
+        GE
+    }
 }

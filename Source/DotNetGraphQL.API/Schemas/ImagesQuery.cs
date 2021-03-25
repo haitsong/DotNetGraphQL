@@ -23,6 +23,7 @@ namespace DotNetGraphQL.API
                         new QueryArgument<StringGraphType> { Name = "coatColor", Description = "Dog Coat Color" },
                         new QueryArgument<StringGraphType> { Name = "breed", Description = "Dog Breed" }),
                     context => GetDogImagesByNameOrBreed(context.GetArgument<string>("coatColor"), context.GetArgument<string>("breed")));
+            Field<ListGraphType<DocumentGraphType>>("documents", "Query for documents", resolve: context => DocumentsData.DocuSamples);
         }
 
         static IEnumerable<DogImagesModel> GetDogImagesByNameOrBreed(string? coatColor, string? breed) 
