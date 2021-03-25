@@ -9,10 +9,10 @@ namespace DotNetGraphQL.API
         {
             Name = name;
 
-            Field(x => x.AvatarUrl, false);
-            Field<ListGraphType<NonNullGraphType<StringGraphType>>>("imagesList", resolve: x => x.Source.ImagesList);
-            Field(x => x.Title, false);
-            Field(x => x.WebsiteUrl, false);
+            Field(x => x.AvatarUrl, false).Description("avatar link url");
+            Field<ListGraphType<NonNullGraphType<StringGraphType>>>("imagesList", resolve: x => x.Source.ImagesList, description: "list of pictures");
+            Field(x => x.Title, false).Description("title of the image");
+            Field(x => x.WebsiteUrl, false).Description("web site");
         }
     }
 }
