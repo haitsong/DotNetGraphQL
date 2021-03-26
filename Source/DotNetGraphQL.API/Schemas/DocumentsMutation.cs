@@ -17,9 +17,9 @@ namespace DotNetGraphQL.API.Schemas
     ///   }
     /// }
     /// </example>
-    public class StarWarsMutation : ObjectGraphType
+    public class DocumentsMutation : ObjectGraphType
     {
-        public StarWarsMutation(StarWarsData data)
+        public DocumentsMutation(StarWarsData data)
         {
             Name = "Mutation";
 
@@ -46,6 +46,19 @@ namespace DotNetGraphQL.API.Schemas
                     var address = context.GetArgument<Address>("address");
                     return data.AddPerson(person, address);
                 });
+
+            /*
+            Field<PersonGraphType>(
+                "createClause",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<ClauseInputType>> { Name = "clause" }
+                ),
+                resolve: context =>
+                {
+                    var clause = context.GetArgument<Clause>("clause");
+                    return data.AddClause(clause);
+                });
+            */
         }
     }
 }

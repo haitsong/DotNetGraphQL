@@ -75,6 +75,7 @@ namespace DotNetGraphQL.API
 
             services.AddSingleton<AddressInputType>();
             services.AddSingleton<PersonInputType>();
+            services.AddSingleton<ClauseInputType>();
 
             services.AddSingleton<EpisodeEnum>();
             services.AddSingleton<AccessEnum>();
@@ -130,8 +131,8 @@ namespace DotNetGraphQL.API
             services.AddSingleton<DroidType>();
             services.AddSingleton<CharacterInterface>();
             services.AddSingleton<EpisodeEnum>();
-            services.AddSingleton<ImagesQuery>();
-            services.AddSingleton<StarWarsMutation>();
+            services.AddSingleton<DocumentsQuery>();
+            services.AddSingleton<DocumentsMutation>();
             services.AddSingleton<ImagesSchema>();
             
             services.AddGraphQL(options => options.EnableMetrics = false)

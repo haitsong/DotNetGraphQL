@@ -1,15 +1,13 @@
 ﻿using GraphQL.Types;
+using DotNetGraphQL.Common.Models;
 
 namespace DotNetGraphQL.API
 {
-    ///<summary>
-    ///   Specification of clause component in catalog. Clause contains specification for schema and rendering.
-    ///</summary>
-    public class ClauseGraphType : ObjectGraphType<DotNetGraphQL.Common.Models.Clause>
+    public class ClauseInputType : InputObjectGraphType<Clause>
     {
-        public ClauseGraphType()
+        public ClauseInputType()
         {
-            Name = "Clause";
+            Name = "ClauseInput";
             Description = "Specification of clause component in catalog. Clause contains specification for schema and rendering.";
             Field<IdentityGraphType>("Identity", resolve: x => x.Source.Identity, description: @"$Clause have globally unique id. Refer to: Structure: /Identity/v1");
             Field<VersionGraphType>("Version", resolve: x => x.Source.Version, description: @"$Clause will have versions, as it will be evolving. Refer to: Structure: /Version/v1");
@@ -20,4 +18,3 @@ namespace DotNetGraphQL.API
         }
     }
 }
-

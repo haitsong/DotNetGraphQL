@@ -10,8 +10,8 @@ namespace DotNetGraphQL.API
         public ImagesSchema(IServiceProvider provider)
             : base(provider)
         {
-            Query = (ImagesQuery)provider.GetService(typeof(ImagesQuery));
-            Mutation = (StarWarsMutation)provider.GetService(typeof(StarWarsMutation));
+            Query = (DocumentsQuery)provider.GetService(typeof(DocumentsQuery));
+            Mutation = (DocumentsMutation)provider.GetService(typeof(DocumentsMutation));
         }
     }
 }

@@ -11,6 +11,7 @@ namespace DotNetGraphQL.API
         private readonly List<Human> _humans = new List<Human>();
         private readonly List<Droid> _droids = new List<Droid>();
         private readonly List<Person> _persons = new List<Person>();
+        private readonly List<Clause> _clauses = new List<Clause>();
 
         public StarWarsData()
         {
@@ -87,6 +88,14 @@ namespace DotNetGraphQL.API
             person.Addresses = new Address[] { address };
             _persons.Add(person);
             return person;
+        }
+
+        public Clause AddClause(Clause clause)
+        {
+            clause.Identity = new Identity();
+            clause.Identity.Description = "Created at " + DateTime.Now;
+            this._clauses.Add(clause);
+            return clause;
         }
     }
 }
