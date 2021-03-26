@@ -8,9 +8,9 @@ namespace DotNetGraphQL.Common.Models
     public class TimeFactor
     {
         ///$Component of date factor apply to. Refer to: Enum: /Frequency/v1
-        public Frequency Component { get; } = Frequency.DAILY;
+        public Frequency Component { get; set; } = Frequency.DAILY;
         ///Value of factor to apply.
-        public short Value { get; } = 0;
+        public short Value { get; set; } = 0;
     }
 }
 

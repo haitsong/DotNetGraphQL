@@ -8,15 +8,15 @@ namespace DotNetGraphQL.Common.Models
     public class Event
     {
         ///$Identity of the event. Refer to: Structure: /Identity
-        public Identity Identity { get; } = new Identity();
+        public Identity Identity { get; set; } = new Identity();
         ///Position of event in the list of events 
-        public uint Ordinal { get; } = 0;
+        public uint Ordinal { get; set; } = 0;
         ///$Type of event Refer to: Enum: EventType/v1
-        public EventType Type { get; } = EventType.CUSTOM;
+        public EventType Type { get; set; } = EventType.CUSTOM;
         ///$Event list of attributes. This is attributes event will provide when fired. Refer to: Structure[]: Attribute/v1
-        public Attribute[] Attributes { get; } = new Attribute[0];
+        public Attribute[] Attributes { get; set; } = new Attribute[0];
         ///$List of obligations activated by event. Refer to: Structure[]: ClauseObligation/v1
-        public ClauseObligation[] Obligations { get; } = new ClauseObligation[0];
+        public ClauseObligation[] Obligations { get; set; } = new ClauseObligation[0];
     }
 }
 

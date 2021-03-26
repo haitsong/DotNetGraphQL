@@ -8,15 +8,15 @@ namespace DotNetGraphQL.Common.Models
     public class AgreementParty
     {
         ///Identity of agreement party must be unique inside agreement.
-        public Guid Id { get; } = Guid.NewGuid();
+        public Guid Id { get; set; } = Guid.NewGuid();
         ///$Management information for action Refer to: Structure: Element/v1
-        public Element Header { get; } = new Element();
+        public Element Header { get; set; } = new Element();
         ///Role of the party in agreement. Roles defined by agreement creator. Role must be unique for party inside agreement.
-        public String Role { get; } = string.Empty;
+        public String Role { get; set; } = string.Empty;
         ///Party to reference for agreement participation.
-        public Party Party { get; } = new Party();
+        public Party Party { get; set; } = new Party();
         ///$List of contacts to work on party agreement. Refer to: Structure[]: AgreementContact/v1
-        public AgreementContact[] Contacts { get; } = new AgreementContact[0];
+        public AgreementContact[] Contacts { get; set; } = new AgreementContact[0];
     }
 }
 

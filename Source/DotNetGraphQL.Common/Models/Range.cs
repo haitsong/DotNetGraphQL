@@ -9,11 +9,11 @@ namespace DotNetGraphQL.Common.Models
     public class Range
     {
         ///$Low limit Refer to: Structure: Quantity/v1
-        public Quantity Low { get; } = new Quantity();
+        public Quantity Low { get; set; } = new Quantity();
         ///$High limit Refer to: Structure: Quantity/v1
-        public Quantity High { get; } = new Quantity();
+        public Quantity High { get; set; } = new Quantity();
         ///Id of range (Temporary field)
-        public String Id { get; } = string.Empty;
+        public String Id { get; set; } = string.Empty;
     }
 }
 

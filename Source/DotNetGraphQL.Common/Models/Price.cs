@@ -8,11 +8,11 @@ namespace DotNetGraphQL.Common.Models
     public class Price
     {
         ///Guid of the price
-        public Guid Id { get; } = Guid.Empty;
+        public Guid Id { get; set; } = Guid.Empty;
         ///$Amount of money to pay. Refer to: Structure: Amount/v1
-        public Amount Amount { get; } = new Amount();
+        public Amount Amount { get; set; } = new Amount();
         ///$Quantity of service or product. By default it is one instance. Refer to: Structure: Quantity/v1
-        public Quantity Quantity { get; } = new Quantity();
+        public Quantity Quantity { get; set; } = new Quantity();
     }
 }
 

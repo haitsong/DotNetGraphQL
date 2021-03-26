@@ -8,9 +8,9 @@ namespace DotNetGraphQL.Common.Models
     public class Author
     {
         ///Reference to author of the document registered in the system as entity.
-        public Identity AuthorReference { get; } = new Identity();
+        public Identity AuthorReference { get; set; } = new Identity();
         ///Text information about author not reference in the system.
-        public String AuthorString { get; } = string.Empty;
+        public String AuthorString { get; set; } = string.Empty;
     }
 }
 

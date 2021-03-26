@@ -8,11 +8,11 @@ namespace DotNetGraphQL.Common.Models
     public class ComponentSpec
     {
         ///Guid
-        public String Id { get; } = string.Empty;
+        public String Id { get; set; } = string.Empty;
         ///$Reference to actual template from template catalog. Refer to: Structure: TemplateSpec/v1
-        public TemplateSpec Template { get; } = new TemplateSpec();
+        public TemplateSpec Template { get; set; } = new TemplateSpec();
         ///$Reference to actual clause from clause catalog. Refer to: Structure[2]: ClauseSpec/v1
-        public ClauseSpec[] Clauses { get; } = new ClauseSpec[0];
+        public ClauseSpec[] Clauses { get; set; } = new ClauseSpec[0];
     }
 }
 

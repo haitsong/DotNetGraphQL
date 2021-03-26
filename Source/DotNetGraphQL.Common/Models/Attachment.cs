@@ -12,25 +12,25 @@ namespace DotNetGraphQL.Common.Models
     public class Attachment
     {
         ///Guid of the attachmentt
-        public Guid Id { get; } = Guid.Empty;
+        public Guid Id { get; set; } = Guid.Empty;
         ///Mime type of the content, with charset etc.
-        public String ContentType { get; } = string.Empty;
+        public String ContentType { get; set; } = string.Empty;
         ///$Human language of the content (BCP-47) Refer to: Enum: /Locale/v1
-        public Locale Language { get; } = Locale.EN_US;
+        public Locale Language { get; set; } = Locale.EN_US;
         ///Data inline, base64ed
-        public String Data { get; } = string.Empty;
+        public String Data { get; set; } = string.Empty;
         ///Uri where the data can be found
-        public String Url { get; } = string.Empty;
+        public String Url { get; set; } = string.Empty;
         ///Number of bytes of content (if url provided)
-        public uint Size { get; } = 0;
+        public uint Size { get; set; } = 0;
         ///Hash of the data (sha-1, base64ed)
-        public String Hash { get; } = string.Empty;
+        public String Hash { get; set; } = string.Empty;
         ///Label to display in place of the data
-        public String Title { get; } = string.Empty;
+        public String Title { get; set; } = string.Empty;
         ///Date attachment was first created
-        public DateTime Creation { get; } = DateTime.MinValue;
+        public DateTime Creation { get; set; } = DateTime.MinValue;
         ///$This is id for period element. It is inherit properties from Element structure. Refer to: Structure: Element/v1
-        public Element ElementId { get; } = new Element();
+        public Element ElementId { get; set; } = new Element();
     }
 }
 

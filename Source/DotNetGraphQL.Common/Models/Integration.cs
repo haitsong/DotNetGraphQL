@@ -8,17 +8,17 @@ namespace DotNetGraphQL.Common.Models
     public class Integration
     {
         ///$Identity of integration contains globally unique id. Refer to: Structure: /Identity/v1
-        public Identity Identity { get; } = new Identity();
+        public Identity Identity { get; set; } = new Identity();
         ///$Integration will have versions, as it will be evolving. Refer to: Structure: /Version/v1
-        public Version Version { get; } = new Version();
+        public Version Version { get; set; } = new Version();
         ///$Integration is a resource and will be accessible through API. Parent for Integration is a Template.   Refer to: Structure: Entity/v1
-        public Entity Entity { get; } = new Entity();
+        public Entity Entity { get; set; } = new Entity();
         ///Party of template, integration is applicable for.
-        public String Party { get; } = string.Empty;
+        public String Party { get; set; } = string.Empty;
         ///$List of attributes template required to specify for document. Refer to: Structure[]: Attribute/v1
-        public Attribute[] Attributes { get; } = new Attribute[0];
+        public Attribute[] Attributes { get; set; } = new Attribute[0];
         ///$List of actions implemented in template. Refer to: Structure[]: Action/v1
-        public Action[] Actions { get; } = new Action[0];
+        public Action[] Actions { get; set; } = new Action[0];
     }
 }
 

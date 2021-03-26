@@ -8,19 +8,19 @@ namespace DotNetGraphQL.Common.Models
     public class Value
     {
         ///$Value as quantity. Refer to: Structure: Quantity/v1
-        public Quantity ValueQuantity { get; } = new Quantity();
+        public Quantity ValueQuantity { get; set; } = new Quantity();
         ///$Value as range of quantities. Refer to: Structure: Range/v1
-        public Range ValueRange { get; } = new Range();
+        public Range ValueRange { get; set; } = new Range();
         ///$Value as ratio. Refer to: Structure: Ratio/v1
-        public Ratio ValueRatio { get; } = new Ratio();
+        public Ratio ValueRatio { get; set; } = new Ratio();
         ///$Value as time period. Refer to: Structure: Period/v1
-        public Period ValuePeriod { get; } = new Period();
+        public Period ValuePeriod { get; set; } = new Period();
         ///Value as text.
-        public String ValueString { get; } = string.Empty;
+        public String ValueString { get; set; } = string.Empty;
         ///Value as boolean true/false.
-        public Boolean ValueBoolean { get; } = false;
+        public Boolean ValueBoolean { get; set; } = false;
         ///Id of the Value (Temporary field)
-        public String Id { get; } = string.Empty;
+        public String Id { get; set; } = string.Empty;
     }
 }
 

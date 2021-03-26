@@ -9,13 +9,13 @@ namespace DotNetGraphQL.Common.Models
     public class Translation
     {
         ///$Locale for language translation defined for. Refer to: Enum: /Locale/v1
-        public Locale Locale { get; } = Locale.EN_US;
+        public Locale Locale { get; set; } = Locale.EN_US;
         ///Translation for object name.
-        public String Name { get; } = string.Empty;
+        public String Name { get; set; } = string.Empty;
         ///Translation for object description.
-        public String Description { get; } = string.Empty;
+        public String Description { get; set; } = string.Empty;
         ///Value specific to translation locale for objects with value.
-        public String Value { get; } = string.Empty;
+        public String Value { get; set; } = string.Empty;
     }
 }
 

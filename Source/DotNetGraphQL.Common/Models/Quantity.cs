@@ -9,17 +9,17 @@ namespace DotNetGraphQL.Common.Models
     public class Quantity
     {
         ///Numerical value (with implicit precision)
-        public Decimal Value { get; } = Decimal.Zero;
+        public Decimal Value { get; set; } = Decimal.Zero;
         ///$How to understand the value Refer to: Enum: QuantityComparator/v1
-        public QuantityComparator Comparator { get; } = QuantityComparator.EQ;
+        public QuantityComparator Comparator { get; set; } = QuantityComparator.EQ;
         ///Unit representation
-        public String Unit { get; } = string.Empty;
+        public String Unit { get; set; } = string.Empty;
         ///System that defines coded unit form
-        public String System { get; } = string.Empty;
+        public String System { get; set; } = string.Empty;
         ///Coded form of the unit
-        public String Code { get; } = string.Empty;
+        public String Code { get; set; } = string.Empty;
         ///Id of the Quantity (Temporary field)
-        public String Id { get; } = string.Empty;
+        public String Id { get; set; } = string.Empty;
     }
 }
 

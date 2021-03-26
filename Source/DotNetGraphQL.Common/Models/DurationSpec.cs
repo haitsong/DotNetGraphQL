@@ -9,9 +9,9 @@ namespace DotNetGraphQL.Common.Models
     public class DurationSpec
     {
         ///Number of time units used for period.
-        public float Value { get; } = 0;
+        public float Value { get; set; } = 0;
         ///$Time units to define duration. Refer to: Enum: UnitsOfTime/v1
-        public UnitsOfTime Units { get; } = UnitsOfTime.H;
+        public UnitsOfTime Units { get; set; } = UnitsOfTime.H;
     }
 }
 

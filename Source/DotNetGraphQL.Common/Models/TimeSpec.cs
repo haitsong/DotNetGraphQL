@@ -13,19 +13,19 @@ namespace DotNetGraphQL.Common.Models
     public class TimeSpec
     {
         ///$Specification of month in which bill need to be produced. Refer to: Enum: /Month/v1
-        public Month Month { get; } = Month.JANUARY;
+        public Month Month { get; set; } = Month.JANUARY;
         ///$Specification for week. Refer to: Enum: /Week/v1
-        public Week Week { get; } = Week.W01;
+        public Week Week { get; set; } = Week.W01;
         ///$Specification for month day bill need to be produced. Refer to: Enum: /MonthDay/v1
-        public MonthDay Day { get; } = MonthDay.D01;
+        public MonthDay Day { get; set; } = MonthDay.D01;
         ///$Specification for week day on which bill need to be produced. Refer to: Enum: /WeekDay/v1
-        public WeekDay WeekDay { get; } = WeekDay.FRIDAY;
+        public WeekDay WeekDay { get; set; } = WeekDay.FRIDAY;
         ///$Specification cat off time of day for bill production. Refer to: Enum: /Hour/v1
-        public Hour Hour { get; } = Hour.H00;
+        public Hour Hour { get; set; } = Hour.H00;
         ///Minute we use to execute. It is number from 0 to 50.
-        public ushort Minute { get; } = 0;
+        public ushort Minute { get; set; } = 0;
         ///$This is factors used to modify portion of current date for validation with spec.   Refer to: Structure[]: /TimeFactor/v1
-        public TimeFactor[] Factors { get; } = new TimeFactor[0];
+        public TimeFactor[] Factors { get; set; } = new TimeFactor[0];
     }
 }
 

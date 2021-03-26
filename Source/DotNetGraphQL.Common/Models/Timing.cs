@@ -11,12 +11,12 @@ namespace DotNetGraphQL.Common.Models
     public class Timing
     {
         ///Identifies specific times when the event occurs. (Note. due to codegen limitations, single event per timing was set) 
-        public DateTime Event { get; } = DateTime.MinValue;
+        public DateTime Event { get; set; } = DateTime.MinValue;
         ///$A set of rules that describe when the event is scheduled. Refer to: Structure: Repeat/v1
-        public Repeat Repeat { get; } = new Repeat();
+        public Repeat Repeat { get; set; } = new Repeat();
         ///$A code for the timing schedule (or just text in code.text). Some codes such as BID are ubiquitous, but many institutions define their own additional codes. If a code is provided, the code is understood to be a complete statement of whatever is specified in the structured timing data, and either the code or the data may be used to interpret the Timing, with the exception that .repeat.bounds still applies over the code (and is not contained in the code).
         /// BID etc.are defined as 'at institutionally specified times'. For example, an institution may choose that BID is "always at 7am and 6pm". If it is inappropriate for this choice to be made, the code BID should not be used.Instead, a distinct organization-specific code should be used in place of the HL7-defined BID code and/or a structured representation should be used (in this case, specifying the two event times). Refer to: Enum: TimingAbbreviation/v1
-        public TimingAbbreviation Code { get; } = TimingAbbreviation.AM;
+        public TimingAbbreviation Code { get; set; } = TimingAbbreviation.AM;
     }
 }
 

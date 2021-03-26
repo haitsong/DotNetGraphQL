@@ -9,11 +9,11 @@ namespace DotNetGraphQL.Common.Models
     public class Binding
     {
         ///$Binding identity in system it imported from or exported to. Id is globally unique. Name is unique binding name inside entity only. Refer to: Structure: /Identity
-        public Identity Identity { get; } = new Identity();
+        public Identity Identity { get; set; } = new Identity();
         ///$Type of binding defines system we bind to. Refer to: Enum: BindingType/v1
-        public BindingType Type { get; } = BindingType.ERP;
+        public BindingType Type { get; set; } = BindingType.ERP;
         ///Code of object in system we bind to if different from id.
-        public String Code { get; } = string.Empty;
+        public String Code { get; set; } = string.Empty;
     }
 }
 

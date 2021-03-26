@@ -2,6 +2,7 @@
 using GraphQL.Types;
 using DotNetGraphQL.API;
 using DotNetGraphQL.Common.Models;
+using System.Collections.Generic;
 
 namespace DotNetGraphQL.API.Schemas
 {
@@ -47,8 +48,7 @@ namespace DotNetGraphQL.API.Schemas
                     return data.AddPerson(person, address);
                 });
 
-            /*
-            Field<PersonGraphType>(
+            Field<ClauseGraphType>(
                 "createClause",
                 arguments: new QueryArguments(
                     new QueryArgument<NonNullGraphType<ClauseInputType>> { Name = "clause" }
@@ -58,8 +58,8 @@ namespace DotNetGraphQL.API.Schemas
                     var clause = context.GetArgument<Clause>("clause");
                     return data.AddClause(clause);
                 });
-            */
         }
+
     }
 }
 

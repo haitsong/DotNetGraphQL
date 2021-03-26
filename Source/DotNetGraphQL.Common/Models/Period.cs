@@ -9,9 +9,9 @@ namespace DotNetGraphQL.Common.Models
     public class Period
     {
         ///Starting time with inclusive boundary
-        public DateTime Start { get; } = DateTime.MaxValue;
+        public DateTime Start { get; set; } = DateTime.MaxValue;
         ///End time with inclusive boundary, if not ongoing.
-        public DateTime End { get; } = DateTime.MinValue;
+        public DateTime End { get; set; } = DateTime.MinValue;
     }
 }
 

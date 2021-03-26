@@ -8,13 +8,13 @@ namespace DotNetGraphQL.Common.Models
     public class Organization
     {
         /// orgnization id
-        public String OrganizationId { get; } = string.Empty;
+        public String OrganizationId { get; set; } = string.Empty;
         /// name
-        public String Name { get; } = string.Empty;
+        public String Name { get; set; } = string.Empty;
         /// description
-        public String Description { get; } = string.Empty;
+        public String Description { get; set; } = string.Empty;
         ///$Valid addresses used by the organization Refer to: Structure[]: Address/v1
-        public Address[] Addresses { get; } = new Address[0];
+        public Address[] Addresses { get; set; } = new Address[0];
     }
 }
 

@@ -8,17 +8,17 @@ namespace DotNetGraphQL.Common.Models
     public class Action
     {
         ///Identity of action must be unique inside template.
-        public Guid Id { get; } = Guid.Empty;
+        public Guid Id { get; set; } = Guid.Empty;
         ///$Management information for action Refer to: Structure: Element/v1
-        public Element Header { get; } = new Element();
+        public Element Header { get; set; } = new Element();
         ///Component id in the template action defined for.
-        public Guid Component { get; } = Guid.Empty;
+        public Guid Component { get; set; } = Guid.Empty;
         ///Event id in the component action defined for.
-        public Guid Event { get; } = Guid.Empty;
+        public Guid Event { get; set; } = Guid.Empty;
         ///Obligation action to support.
-        public Obligation Obligation { get; } = new Obligation();
+        public Obligation Obligation { get; set; } = new Obligation();
         ///Workflow to execute for obligation support.
-        public Identity Workflow { get; } = new Identity();
+        public Identity Workflow { get; set; } = new Identity();
     }
 }
 

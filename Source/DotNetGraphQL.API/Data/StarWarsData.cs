@@ -92,7 +92,6 @@ namespace DotNetGraphQL.API
 
         public Clause AddClause(Clause clause)
         {
-            clause.Identity = new Identity();
             clause.Identity.Description = "Created at " + DateTime.Now;
             this._clauses.Add(clause);
             return clause;

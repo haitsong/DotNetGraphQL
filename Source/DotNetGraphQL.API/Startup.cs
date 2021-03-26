@@ -75,6 +75,10 @@ namespace DotNetGraphQL.API
 
             services.AddSingleton<AddressInputType>();
             services.AddSingleton<PersonInputType>();
+            services.AddSingleton<IdentityInputType>();
+            services.AddSingleton<VersionInputType>();
+            services.AddSingleton<EntityInputType>();
+            services.AddSingleton<AttributeInputType>();
             services.AddSingleton<ClauseInputType>();
 
             services.AddSingleton<EpisodeEnum>();

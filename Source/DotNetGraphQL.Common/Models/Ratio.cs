@@ -9,11 +9,11 @@ namespace DotNetGraphQL.Common.Models
     public class Ratio
     {
         ///$Numerator value Refer to: Structure: Quantity/v1
-        public Quantity Numerator { get; } = new Quantity();
+        public Quantity Numerator { get; set; } = new Quantity();
         ///$Denominator value Refer to: Structure: Quantity/v1
-        public Quantity Denominator { get; } = new Quantity();
+        public Quantity Denominator { get; set; } = new Quantity();
         ///Id of the Ratio (Temporary field)
-        public String Id { get; } = string.Empty;
+        public String Id { get; set; } = string.Empty;
     }
 }
 

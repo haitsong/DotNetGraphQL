@@ -8,11 +8,11 @@ namespace DotNetGraphQL.Common.Models
     public class Contact
     {
         ///$Identity of organization or person. Refer to: Structure: /Identity
-        public Identity Identity { get; } = new Identity();
+        public Identity Identity { get; set; } = new Identity();
         ///The URL pointing to the contact information.
-        public String URL { get; } = string.Empty;
+        public String URL { get; set; } = string.Empty;
         ///The email address of the contact person/organization.
-        public String EMail { get; } = string.Empty;
+        public String EMail { get; set; } = string.Empty;
     }
 }
 
