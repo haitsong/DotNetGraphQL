@@ -31,13 +31,13 @@ namespace DotNetGraphQL.API
             (string.IsNullOrWhiteSpace(coatColor), string.IsNullOrWhiteSpace(breed)) 
             switch
             {
-                (true, true) => 
-                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase) && x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
-                (true, false) => 
-                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase)),
-                (false, true) => 
-                    DogImagesData.DogImages.Where(x => x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
                 (false, false) => 
+                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase) && x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
+                (false, true) => 
+                    DogImagesData.DogImages.Where(x => x.CoatColor.Equals(coatColor, StringComparison.OrdinalIgnoreCase)),
+                (true,  false) => 
+                    DogImagesData.DogImages.Where(x => x.Breed.Equals(breed, StringComparison.OrdinalIgnoreCase)),
+                (true, true) => 
                     throw new ArgumentException($"{nameof(DogImagesModel.CoatColor)} and {nameof(DogImagesModel.Breed)} cannot both be null")
             };
     }
