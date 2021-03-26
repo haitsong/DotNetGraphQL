@@ -8,21 +8,21 @@ namespace DotNetGraphQL.Common.Models
     public class Person
     {
         /// person id 
-        public String Id { get; } = string.Empty;
+        public String Id { get; set;  } = string.Empty;
         /// last time
-        public String LastName { get; } = string.Empty;
+        public String LastName { get; set; } = string.Empty;
         /// first time
-        public String FirstName { get; } = string.Empty;
+        public String FirstName { get; set;  } = string.Empty;
         /// email address
-        public String Email { get; } = string.Empty;
+        public String Email { get; set; } = string.Empty;
         /// department
-        public String Department { get; } = string.Empty;
+        public String Department { get; set; } = string.Empty;
         /// phone number
-        public String Phone { get; } = string.Empty;
+        public String Phone { get; set; } = string.Empty;
         ///The organization employing the individual (optional)
-        public String OrganizationId { get; } = string.Empty;
+        public String OrganizationId { get; set; } = string.Empty;
         /// address of the person, refer to: Address
-        public Address[] Addresses { get; } = new Address[0];
+        public Address[] Addresses { get; set; } = new Address[0];
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNetGraphQL.Common.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace DotNetGraphQL.API
     {
         private readonly List<Human> _humans = new List<Human>();
         private readonly List<Droid> _droids = new List<Droid>();
+        private readonly List<Person> _persons = new List<Person>();
 
         public StarWarsData()
         {
@@ -77,6 +79,14 @@ namespace DotNetGraphQL.API
             human.Id = Guid.NewGuid().ToString();
             _humans.Add(human);
             return human;
+        }
+
+        public Person AddPerson(Person person, Address address)
+        {
+            person.Id = Guid.NewGuid().ToString();
+            person.Addresses = new Address[] { address };
+            _persons.Add(person);
+            return person;
         }
     }
 }

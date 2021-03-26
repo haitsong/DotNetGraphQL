@@ -8,13 +8,15 @@ namespace DotNetGraphQL.Common.Models
     public class Address
     {
         /// street address
-        public String StreetAddress { get; } = string.Empty;
+        public String StreetAddress { get; set; } = string.Empty;
         /// city
-        public String City { get; } = string.Empty;
+        public String City { get; set; } = string.Empty;
         /// country
-        public String Country { get; } = string.Empty;
+        public String Country { get; set; } = string.Empty;
+        /// state
+        public String State { get; set; } = string.Empty;
         /// zip code
-        public String ZipOrPostalCode { get; } = string.Empty;
+        public String ZipOrPostalCode { get; set; } = string.Empty;
     }
 }
 

@@ -73,6 +73,9 @@ namespace DotNetGraphQL.API
             services.AddSingleton<TemplateSpecGraphType>();
             services.AddSingleton<ClauseSpecGraphType>();
 
+            services.AddSingleton<AddressInputType>();
+            services.AddSingleton<PersonInputType>();
+
             services.AddSingleton<EpisodeEnum>();
             services.AddSingleton<AccessEnum>();
             services.AddSingleton<ClassEnum>();

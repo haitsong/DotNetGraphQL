@@ -1,6 +1,7 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using DotNetGraphQL.API;
+using DotNetGraphQL.Common.Models;
 
 namespace DotNetGraphQL.API.Schemas
 {
@@ -31,6 +32,19 @@ namespace DotNetGraphQL.API.Schemas
                 {
                     var human = context.GetArgument<Human>("human");
                     return data.AddHuman(human);
+                });
+
+            Field<PersonGraphType>(
+                "createPerson",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<PersonInputType>> { Name ="person" },
+                    new QueryArgument<NonNullGraphType<AddressInputType>> { Name = "address" }
+                ),
+                resolve: context =>
+                {
+                    var person = context.GetArgument<Person>("person");
+                    var address = context.GetArgument<Address>("address");
+                    return data.AddPerson(person, address);
                 });
         }
     }
